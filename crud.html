@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="crudstyle.css" />
     <title>Blog Posts</title>
   </head>
   <body>
@@ -45,7 +44,7 @@
 
     <script type="module">
       //NOTE: refreshPosts contains the edit and delete functions
-      import { refreshPosts, addPost } from "./styledblog.js";
+      import { refreshPosts, addPost } from "./blog.js";
 
       let curr = localStorage.getItem("posts");
       if (curr !== null && JSON.parse(curr).length > 0) {
