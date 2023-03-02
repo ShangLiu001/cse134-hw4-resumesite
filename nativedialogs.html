@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="/node_modules/dompurify/dist/purify.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Part 1 - Simple Dialogs </title>
+  </head>
+  <body>
+
+    <h1>Simple Dialogs?</h1>
+	<button id="alert">Alert</button>
+
+
+	<button id="confirm">Confirm</button>
+
+
+	<button id="prompt">Prompt</button>
+
+
+	<button id="safer prompt">Safer Prompt</button>
+
+    <hr>
+
+    <output id="out"></output>
+
+
+<script>
+		const constalert = document.getElementById("alert");
+		constalert.addEventListener("click", () => {
+            //"window." can actually be omitted since it is the default object. It's just there to make clear~
+            window.alert("Your computer has virus!");
+        });
+
+		const constconfirm = document.getElementById("confirm");
+		const constconfirmout = document.getElementById("out");
+		constconfirm.addEventListener("click", () => {
+            constconfirmout.textContent = null;
+            setTimeout(() => {
+                const userreturn = window.confirm("Are you sure to delete your account?");
+			    constconfirmout.textContent = `The value returned by the confirm method is : ${userreturn}`;
+            }, 50);
+		});
+
+
+        const constprompt = document.getElementById("prompt");
+		const constpromptout = document.getElementById("out");
+		constprompt.addEventListener("click", () => {
+            constpromptout.textContent = null;
+            setTimeout(() => {
+                const userinput = window.prompt("Enter your first name:");
+                if (userinput === null) {
+                    constpromptout.textContent = "Prompt cancelled";
+                }
+                else if (userinput === "") {
+                    constpromptout.textContent = "Nothing entered";
+                } 
+                else {
+                    constpromptout.textContent = `The value returned by the prompt method is : ${userinput}`;
+                }
+            }, 50);
+		});
+
+
+        const constsaferprompt = document.getElementById("safer prompt");
+		const constsaferpromptout = document.getElementById("out");
+        constsaferprompt.addEventListener("click", () => {
+            constsaferpromptout.textContent = null;
+            setTimeout(() => {
+                const userinput = window.prompt("Enter your account password:");
+                let clean = DOMPurify.sanitize(userinput);
+                if (clean === null) {
+                    constsaferpromptout.textContent = "Prompt cancelled";
+                }
+                else if (clean === "") {
+                    constsaferpromptout.textContent = "Nothing entered";
+                } 
+                else {
+                    constsaferpromptout.textContent = `The value returned by the prompt method is : ${clean}`;
+                }
+            }, 50);
+		});
+
+    </script>
+  </body>
+</html>
+

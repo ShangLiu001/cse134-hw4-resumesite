@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="/node_modules/dompurify/dist/purify.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom dialog</title>
+  </head>
+
+  <body>
+
+    <button id="showalert">Alert</button>
+    <button id="showconfirm">Confirm</button>
+    <button id="showprompt">Prompt</button>
+
+
+	<dialog id="alert">
+        <h1>Alert pressed</h1>
+        <form method="dialog">
+            <button type="button" id="alertOK">OK</button>
+        </form>
+    </dialog>
+
+
+	<dialog id="confirm">
+        <h1>Do you want to confirm this?</h1>
+        <form method="dialog">
+            <button type="button" id="confirmcancel">Cancel</button>
+            <button type="button" id="confirmOK">OK</button>
+        </form>
+    </dialog>
+
+
+	<dialog id="prompt">
+        <h1>Prompt</h1>
+        <form method="dialog">
+            <label for="name">What is your name?</label>
+            <br>
+            <input type="text" id="name" name="name">
+            <br>
+            <button type="button" id="promptcancel">Cancel</button>
+            <button type="button" id="promptOK">OK</button>
+        </form>
+    </dialog>
+
+
+    <hr>
+    <output id="out"></output>
+
+
+
+    <script type="module">
+        import {showalertdialog} from './customdialog.js';
+        const constalert = document.getElementById("showalert");
+		constalert.addEventListener("click", () => {
+            showalertdialog();
+        });
+
+        import {showconfirmdialog} from './customdialog.js';
+        const constconfirm = document.getElementById("showconfirm");
+		constconfirm.addEventListener("click", () => {
+            showconfirmdialog();
+        });
+
+        import {showpromptdialog} from './customdialog.js';
+        const constprompt = document.getElementById("showprompt");
+		constprompt.addEventListener("click", () => {
+            showpromptdialog();
+        });
+
+    </script>
+
+  </body>
+</html>

@@ -1,1164 +1,138 @@
-@font-face {
-  font-family: "My Signiture Font";
-  src: url("Autography-DOLnW.otf");
-  font-display: fallback;
-}
-a{
-    text-decoration: none; 
-}
-:root {
-  --white: #ffffff;
-  --black: #000000;
-}
 body {
-  background-color: rgba(251, 225, 213, 0.892);
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif,
+    sans-serif;
+  margin: 30;
+  padding: 20;
+  background-color: #f9e8e8;
+}
+
+h1 {
+  text-shadow: -2px 0px 0px rgb(39, 209, 150), 2px 0px 0px gold,
+    0px -2px 0px rgb(241, 208, 17), 0px 3px 0px gold;
+  color: #555;
+  font-size: 60px;
+  font-style: italic;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+table {
+  margin: auto;
+  border: #555 4px solid;
+  border-radius: 20px;
+  border-collapse: collapse;
+  width: 70%;
+  background-color: #fff;
+  box-shadow: 20px 10px 10px gold;
+}
+
+th,
+td {
+  text-align: center;
+  padding: 20px;
+  border-bottom: 1mm ridge rgb(81, 93, 104);
+}
+
+th {
+  background-color: #555;
+  color: #fff;
+  font-size: 20px;
+}
+
+td {
+  background-color: #f9e8e8;
+    color: #555;
+    font-size: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.edit, .delete {
+  background-color: #555;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+}
+
+
+#addpost {
+  background-color: #555;
+  font-size: 25px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif, sans-serif;
+  height: 80px;
+  width: 200px;
+  position: relative;
+  left: 45%;
+  color: #fff;
+  padding: 20px;
+  border: 5px solid #556;
+  border-radius: 5px;
+}
+
+#addpost:hover {
+  font-size: 30px;
+  background-color: gold;
+}
+
+form {
+  background-color: #fff;
   display: flex;
   flex-direction: column;
-  align-items: start;
+  align-items: center;
+  border: null;
+  border-radius: 5px;
 }
-ul {
-  list-style-type: none;
+
+form label, form input {
+  font-size: 25px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif,
+    sans-serif;
+  display: block;
+  margin-top: 5px;
 }
-@media (min-width: 1026px) {
-  #container {
-    display: flex;
-  }
 
-  #ucsd {
-    position: relative;
-    bottom: 23px;
-    left: 30px;
-  }
-  main {
-    display: inline-block;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-items: center;
-    justify-content: left;
-    border: 8px solid black;
-    border-radius: 20px;
-    max-width: 80%;
-    height: auto;
-    text-align: left;
-    position: relative;
-    bottom: 20px;
-    left: 10px;
-    transition: all 1s ease-out;
-    animation-duration: 1s;
-    animation-name: slidein;
-    animation-iteration-count: 1;
-    animation-direction: alternate;
-  }
-  @keyframes slidein {
-    from {
-      margin-left: -100%;
-      width: 300%;
-    }
-    to {
-      margin-left: 0%;
-      width: 100%;
-    }
-  }
-  main:hover,
-  main:focus {
-    display: inline-block;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-items: center;
-    justify-content: left;
-    border: 8px solid black;
-    border-radius: 20px;
-    max-width: 100%;
-    height: auto;
-    text-align: left;
-    position: relative;
-    bottom: 20px;
-    left: 50px;
-    animation-duration: 0.5s;
-    animation-name: slidein;
-    animation-iteration-count: 1;
-    animation-direction: alternate;
-    background-color: rgb(246, 188, 177);
-    transform: scale(1.03);
-  }
-  #twitch {
-    height: auto;
-    display: inline-block;
-    position: relative;
-    left: 150px;
-    flex-direction: row;
-    justify-content: center;
-    align-items: start;
-    transition: all 1s ease-out;
-  }
-  #twitch:hover,
-  #twitch:focus {
-    height: auto;
-    left: 50px;
-    display: inline-block;
-    flex-direction: row;
-    justify-content: center;
-    align-items: end;
-    transition-duration: 3s;
-    transform: scale(1.08);
-  }
-  h1 {
-    font-family: "My Signiture Font";
-    font-size: 5em;
-    text-align: center;
-    line-height: 100%;
-    color: var(--black);
-    transform: rotate(-1deg);
-  }
-  h2 {
-    font-family: "Copperplate";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 1.5vw;
-    text-align: center;
-    line-height: 200%;
-    color: var(--black);
-  }
-  .name-major-greeting {
-    border: 2px solid black;
-    border-radius: 2px;
-    width: 70%;
-  }
-  #ce {
-    font-family: "Copperplate";
-    font-style: normal;
-    font-weight: 800;
-    font-size: 2.8vw;
-    text-align: center;
-    line-height: 1.5ch;
-    color: var(--black);
-  }
-  h3 {
-    font-family: Copperplate, "Copperplate Gothic Light", fantasy;
-    font-size: 2vw;
-    font-style: italic;
-    font-variant: small-caps;
-    text-align: center;
-    font-weight: 1000;
-    line-height: 100%;
-  }
-  h3 + p {
-    font-family: "Trebuchet MS", Helvetica, sans-serif;
-    font-size: 1vw;
-    font-style: normal;
-    text-align: left;
-    font-weight: 20;
-    line-height: 110% ;
-  }
-  pre {
-    font-size: 0.8vw;
-    transform: translate(10px, 10px) rotate(-6deg);
-    width: 140px;
-    height: 60px;
-  }
-  .link {
-    font-family: "Monospace";
-    font-style: italic;
-    font-weight: 200;
-    font-size: 100%;
-    line-height: 200%;
-    text-decoration: underline;
-    color: rgb(11, 95, 116);
-  }
-  .link:hover {
-    font-family: "Monospace";
-    font-style: italic;
-    font-weight: 300;
-    font-size: 100%;
-    line-height: 200%;
-    color: rgb(90, 208, 237);
-    text-decoration: none;
-  }
-  .keywords {
-    font-family: "Trebuchet MS", Helvetica, sans-serif;
-    font-size: 1vw;
-    text-align: left;
-    font-weight: 30;
-    line-height: 110%;
-    color: rgb(100, 24, 49);
-  }
-
-  .keywords:hover {
-    font-family: "Trebuchet MS", Helvetica, sans-serif;
-    font-size: 1vw;
-    text-align: left;
-    font-weight: 30;
-    line-height: 110%;
-    color: rgb(195, 39, 91);
-  }
-
-  #main {
-    background-color: rgb(186, 210, 223);
-    border: 1px solid rgb(41, 44, 97);
-    border-radius: 10px;
-    padding: 1rem;
-    margin: 1rem;
-    width: 100%;
-    height: 100%;
-  }
-
-
-
-  #Resumelink {
-    font-family: Copperplate, "Copperplate Gothic Light", fantasy;
-    font-size: 2.5vw;
-    font-style: italic;
-    font-variant: small-caps;
-    font-weight: 20;
-    line-height: 200%;
-    color: rgb(11, 95, 116);
-    text-decoration: underline;
-    transition: all 0.5s ease-out;
-  }
-
-  #Resumelink:hover,
-  #Resumelink:focus {
-    font-family: Copperplate, "Copperplate Gothic Light", fantasy;
-    font-size: 2.5vw;
-    font-style: italic;
-    font-variant: small-caps;
-    font-weight: 30;
-    line-height: 200%;
-    color: rgb(90, 208, 237);
-    text-decoration: none;
-    background-color: rgb(186, 210, 223);
-    font-size: 3vw;
-  }
-
-  h4 {
-    font-family: Copperplate, "Copperplate Gothic Light", fantasy;
-    font-size: 2.5vw;
-    font-style: normal;
-    font-variant: normal;
-    text-align: left;
-    font-weight: 30;
-  }
-  #details {
-    font-family: "Trebuchet MS", Helvetica, sans-serif;
-    font-size: 0.9vw;
-    font-style: normal;
-    text-align: left;
-    font-weight: 20;
-  }
-
-  .li {
-    font-family: Copperplate, "Copperplate Gothic Light", fantasy;
-    font-size: 1.5vw;
-    font-style: normal;
-    text-align: left;
-    font-weight: 10;
-    line-height: 100%;
-    flex: 1;
-    padding: 0.5rem;
-    transition: all 0.5s ease-out;
-  }
-  .li:hover,
-  .li:focus {
-    background-color: rgb(186, 210, 223);
-    color: rgb(41, 44, 97);
-    font-size: 1.6vw;
-  }
-
-  .longpara {
-    max-width: 70ch;
-    font-family: "Trebuchet MS", Helvetica, sans-serif;
-    font-size: 1.1vw;
-    font-style: normal;
-    
-    text-align: left;
-    font-weight: 26;
-    line-height: 120%;
-  }
-
-  colgroup {
-    background-color: rgba(179, 200, 211, 0.717);
-  }
-
-  tr {
-    font-family: "Trebuchet MS", Helvetica, sans-serif;
-    font-size: 1.15vw;
-    font-style: normal;
-    text-align: left;
-    font-weight: 26;
-    line-height: 120%;
-  }
-
-  #mypic {
-    position: relative;
-    left: 100px;
-    top: 100px;
-  }
-
-  nav {
-    position: relative;
-    left: 200px;
-    top: 10px;
-  }
-
-  figcaption {
-    text-align: center;
-    font-family: "Trebuchet MS", Helvetica, sans-serif;
-    font-size: 1.5vw;
-    
-    
-    font-weight: 30;
-    line-height: 200%;
-    position: relative;
-    left: 100px;
-    top: 100px;
-  }
-
-  #middle {
-    display: flex;
-    flex-direction: row;
-  }
-
-  .highlight {
-    width: 70%;
-    font-family: Copperplate, "Copperplate Gothic Light", fantasy;
-    font-size: 1.3vw;
-    font-style: normal;
-    text-align: left;
-    font-weight: 20;
-    line-height: 120%;
-    background-color: rgba(179, 200, 211, 0.717);
-  }
-
-  #intro {
-    background-color: rgba(179, 200, 211, 0.717);
-  }
-
-  .socialmedia {
-    display: inline-block;
-    flex-direction: row;
-  }
-
-  #summary {
-    font-family: URW Chancery L, cursive;
-    font-size: 300%;
-    font-weight: 30;
-    line-height: 0px;
-    position: relative;
-    bottom: 10px;
-    left: 70px;
-  }
-  #summary + section {
-    font-family: URW Chancery L, cursive;
-    font-size: 220%;
-    font-weight: 30;
-    line-height: 0px;
-    position: relative;
-    bottom: 10px;
-    left: 70px;
-  }
-
-  #email {
-    font-family: "Trebuchet MS", Helvetica, sans-serif;
-    font-size: 1.2vw;
-    font-style: normal;
-    text-align: left;
-    font-weight: 20;
-    line-height: 120%;
-  }
-
-  h5 {
-    list-style: none;
-    font-family: Copperplate, "Copperplate Gothic Light", fantasy;
-    font-size: 1.8vw;
-    font-style: normal;
-
-    text-align: left;
-    font-weight: 20;
-    position: relative;
-    left: 70px;
-  }
-
-  #contact {
-    list-style: none;
-    font-family: "Trebuchet MS", Helvetica, sans-serif;
-    font-size: 1.2vw;
-    font-style: normal;
-    text-align: left;
-    font-weight: 20;
-    line-height: 150%;
-    position: relative;
-    bottom: 0px;
-    left: 30px;
-  }
-  details > summary {
-    list-style: none;
-  }
-  details {
-    display: flex;
-    flex-direction: row;
-  }
+form #summary {
+  width: 400px;
+  height: 100px;
+  border: 2px solid #555;
+  font: 20px "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif,sans-serif;
+  border-radius: 5px;
+  padding: 5px;
 }
 
 
-
-@media only screen and (max-width: 1025px) and (min-width: 641px) {
-    #container {
-        display: flex;
-        flex-direction: column;
-      }
-    
-      #ucsd {
-        position: relative;
-        bottom: 23px;
-        left: 30px;
-      }
-      main {
-        display: inline-block;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        align-items: center;
-        justify-content: left;
-        border: 10px solid black;
-        border-radius: 20px;
-        max-width: 100%;
-        height: auto;
-        text-align: left;
-        position: relative;
-        bottom: 5%;
-        left: 26%;
-        transition: all 1s ease-out;
-        animation-duration: 1s;
-        animation-name: slidein;
-        animation-iteration-count: 1;
-        animation-direction: alternate;
-      }
-      @keyframes slidein {
-        from {
-          margin-left: -100%;
-          width: 300%;
-        }
-        to {
-          margin-left: 0%;
-          width: 100%;
-        }
-      }
-      main:hover,
-      main:focus {
-        display: inline-block;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        align-items: center;
-        justify-content: left;
-        border: 10px solid black;
-        border-radius: 20px;
-        max-width: 100%;
-        height: auto;
-        text-align: left;
-        position: relative;
-        bottom: 5%;
-        left: 28%;
-        animation-duration: 0.5s;
-        animation-name: slidein;
-        animation-iteration-count: 1;
-        animation-direction: alternate;
-        background-color: rgb(197, 223, 238);
-        transform: scale(1.03);
-      }
-      #twitch {
-        display: block;
-        position: relative;
-        left:2%;
-        flex-direction: row;
-        align-items: end;
-        transition: all 1s ease-out;
-        width: 150%;
-        height: auto;
-      }
-      #twitch:hover,
-      #twitch:focus {
-        display: inline-block;
-        flex-direction: row;
-        left: 0%;
-        justify-content: center;
-        align-items: end;
-        transition-duration: 3s;
-        transform: scale(1.02);
-      }
-      h1 {
-        font-family: "My Signiture Font";
-        font-size: 700%;
-        text-align: center;
-        line-height: 1.2ch;
-        color: var(--black);
-        transform: rotate(-1.2deg);
-      }
-      h2 {
-        font-family: "Copperplate";
-        font-style: normal;
-        font-weight: 400;
-        font-size: 220%;
-        text-align: center;
-        line-height: 200%;
-        color: var(--black);
-      }
-      .name-major-greeting {
-        border: 3px solid black;
-        border-radius: 3px;
-        width: 70%;
-      }
-      #ce {
-        font-family: "Copperplate";
-        font-style: normal;
-        font-weight: 600;
-        font-size: 180%;
-        text-align: center;
-        line-height: 1.5ch;
-        color: var(--black);
-      }
-      h3 {
-        font-family: Copperplate, "Copperplate Gothic Light", fantasy;
-        font-size: 200%;
-        font-style: italic;
-        font-variant: small-caps;
-        text-align: center;
-        font-weight: 1000;
-        line-height: 40%;
-      }
-      h3 + p {
-        max-width: 60ch;
-        font-family: "Trebuchet MS", Helvetica, sans-serif;
-        font-size: 180%;
-        font-style: normal;
-        text-align: center;
-        font-weight: 30;
-      }
-      pre {
-        font-size: 150%;
-        transform: translate(10px, 10px) rotate(1deg);
-        width: 140px;
-        height: 60px;
-        position: relative;
-        left: 6%;
-        bottom: 40%;
-      }
-      .link {
-        font-family: "Monospace";
-        font-style: italic;
-        font-weight: 200;
-        font-size: 100%;
-        line-height: 200%;
-        text-decoration: underline;
-        color: rgb(11, 95, 116);
-      }
-      .link:hover,
-      .link:focus {
-        font-family: "Monospace";
-        font-style: italic;
-        font-weight: 300;
-        font-size: 100%;
-        line-height: 200%;
-        color: rgb(90, 208, 237);
-        text-decoration: none;
-      }
-    
-      #details {
-        font-family: "Trebuchet MS", Helvetica, sans-serif;
-        font-size: 170%;
-        font-style: normal;
-        text-align: left;
-        font-weight: 28;
-        line-height: 120%;
-        position: relative;
-        left: 1%;
-      }
-    
-      .keywords {
-        font-family: "Trebuchet MS", Helvetica, sans-serif;
-        font-size: 120%;
-        
-        text-align: left;
-        font-weight: 34;
-        line-height: 120%;
-        color: rgb(100, 24, 49);
-      }
-    
-      .keywords:hover,
-      .keywords:focus {
-        font-family: "Trebuchet MS", Helvetica, sans-serif;
-        font-size: 130%;
-        
-        text-align: left;
-        font-weight: 34;
-        line-height: 120%;
-        color: rgb(195, 39, 91);
-      }
-    
-    
-      #Resumelink {
-        font-family: Copperplate, "Copperplate Gothic Light", fantasy;
-        font-size: 300%;
-        font-style: italic;
-        font-variant: small-caps;
-        font-weight: 40;
-        line-height: 200%;
-        color: rgb(11, 95, 116);
-        text-decoration: underline;
-        transition: all 0.5s ease-out;
-      }
-    
-      #Resumelink:hover,
-      #Resumelink:focus {
-        font-family: Copperplate, "Copperplate Gothic Light", fantasy;
-        font-size: 320%;
-        font-style: italic;
-        font-variant: small-caps;
-        font-weight: 40;
-        line-height: 200%;
-        color: rgb(90, 208, 237);
-        text-decoration: none;
-        background-color: rgb(186, 210, 223);
-      }
-    
-      h4 {
-        font-family: Copperplate, "Copperplate Gothic Light", fantasy;
-        font-size: 350%;
-        font-style: normal;
-        font-variant: normal;
-        text-align: left;
-        font-weight: 30;
-        line-height: 100%;
-      }
-    
-      .li {
-        font-family: Copperplate, "Copperplate Gothic Light", fantasy;
-        font-size: 300%;
-        font-style: normal;
-        font-variant: normal;
-        text-align: left;
-        font-weight: 10;
-        line-height: 100%;
-        flex: 1;
-        padding: 0.5rem;
-        transition: all 0.5s ease-out;
-      }
-    
-      .li:hover,
-      .li:focus {
-        background-color: rgb(186, 210, 223);
-        color: rgb(41, 44, 97);
-      }
-    
-      .longpara {
-        max-width: 70ch;
-        font-family: "Trebuchet MS", Helvetica, sans-serif;
-        font-size: 60%;
-        font-style: normal;
-        
-        text-align: left;
-        font-weight: 26;
-        line-height: 120%;
-      }
-    
-      colgroup {
-        background-color: rgba(179, 200, 211, 0.717);
-      }
-      caption{
-        font-size: 80%;
-      }
-      tr {
-        font-family: "Trebuchet MS", Helvetica, sans-serif;
-        font-size: 60%;
-        font-style: normal;
-        
-        text-align: left;
-        font-weight: 26;
-        line-height: 120%;
-      }
-      #mypic {
-        position: relative;
-        display: block;
-        left:10%;
-        top: 20%;
-        width: 70%;
-        height: auto;
-      }
-    
-      nav {
-        position: relative;
-        left: 10%;
-        top: 2%;
-        border-radius: 10%;
-      }
-    
-      figcaption {
-        text-align: center;
-        font-family: "Trebuchet MS", Helvetica, sans-serif;
-        font-size: 160%;
-        
-        
-        font-weight: 30;
-        line-height: 200%;
-        position: relative;
-        left: 5%;
-      }
-    
-      #middle {
-        display: flex;
-        flex-direction: column;
-      }
-    
-      .highlight {
-        font-family: Copperplate, "Copperplate Gothic Light", fantasy;
-        font-size: 120%;
-        font-style: normal;
-        
-        text-align: left;
-        font-weight: 20;
-        line-height: 120%;
-        background-color: rgba(179, 200, 211, 0.717);
-      }
-    
-    
-      .socialmedia {
-        display: inline-block;
-        flex-direction: row;
-      }
-    
-      #summary {
-        font-family: URW Chancery L, cursive;
-        font-size: 300%;
-        font-weight: 30;
-        line-height: 120%;
-        position: relative;
-        bottom: 10px;
-        left: 70px;
-      }
-      #summary + section {
-        font-family: URW Chancery L, cursive;
-        font-size: 220%;
-        font-weight: 30;
-        line-height: 120%;
-        position: relative;
-        bottom: 10px;
-        left: 70px;
-      }
-    
-      #email {
-        font-family: "Trebuchet MS", Helvetica, sans-serif;
-        font-size: 200%;
-        font-style: normal;
-        
-        text-align: left;
-        font-weight: 20;
-        line-height: 120%;
-      }
-    
-      h5 {
-        list-style: none;
-        font-family: Copperplate, "Copperplate Gothic Light", fantasy;
-        font-size: 300%;
-        font-style: normal;
-        
-        text-align: left;
-        font-weight: 30;
-        line-height: 50%;
-        position: relative;
-        left: 70px;
-      }
-      #contact {
-        list-style: none;
-        font-family: "Trebuchet MS", Helvetica, sans-serif;
-        font-size: 200%;
-        font-style: normal;
-        
-        text-align: left;
-        font-weight: 20;
-        line-height: 150%;
-        position: relative;
-        bottom: 0px;
-        left: 30px;
-      }
-      details > summary {
-        list-style: none;
-      }
-      details {
-        display: flex;
-        flex-direction: row;
-      }
+#save {
+  background-color: rgb(79, 79, 221);
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin-right: 3px;
+  position: relative;
+  left: 35%;
 }
 
-@media only screen and (max-width: 640px) {
-    #container {
-        display: flex;
-        flex-direction: column;
-      }
-      #ucsd {
-        position: relative;
-        bottom: 23px;
-        left: 30px;
-      }
-      main {
-        display: inline-block;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        align-items: center;
-        justify-content: left;
-        border: 4px solid black;
-        border-radius: 10px;
-        height: auto;
-        text-align: left;
-        position: relative;
-        bottom: 3%;
-        left: 30%;
-        transition: all 1s ease-out;
-        animation-duration: 0.5s;
-        animation-name: slidein;
-        animation-iteration-count: 1;
-        animation-direction: alternate;
-      }
-      @keyframes slidein {
-        from {
-          margin-left: -100%;
-          width: 300%;
-        }
-        to {
-          margin-left: 0%;
-          width: 100%;
-        }
-      }
-      main:hover,
-      main:focus {
-        display: inline-block;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        align-items: center;
-        justify-content: left;
-        border: 10px solid black;
-        border-radius: 20px;
-        height: auto;
-        text-align: left;
-        position: relative;
-        bottom: 5%;
-        left: 30%;
-        animation-duration: 0.5s;
-        animation-name: slidein;
-        animation-iteration-count: 1;
-        animation-direction: alternate;
-        background-color: rgb(197, 223, 238);
-        transform: scale(1.03);
-      }
-      #twitch {
-        display: block;
-        position: relative;
-        right:3%;
-        flex-direction: row;
-        align-items: end;
-        width: 180%;
-        height: auto;
-      }
-      h1 {
-        font-family: "My Signiture Font";
-        font-size:500%;
-        text-align: center;
-        line-height: 1.2ch;
-        color: var(--black);
-        transform: rotate(-1.2deg);
-      }
-      h2 {
-        font-family: "Copperplate";
-        font-style: normal;
-        font-weight: 400;
-        font-size: 160%;
-        text-align: center;
-        line-height: 200%;
-        color: var(--black);
-      }
-      .name-major-greeting {
-        border: 3px solid black;
-        border-radius: 3px;
-        width: 70%;
-      }
-      #ce {
-        font-family: "Copperplate";
-        font-style: normal;
-        font-weight: 600;
-        font-size: 150%;
-        text-align: center;
-        line-height: 1.5ch;
-        color: var(--black);
-      }
-      h3 {
-        font-family: Copperplate, "Copperplate Gothic Light", fantasy;
-        font-size: 150%;
-        font-style: italic;
-        font-variant: small-caps;
-        text-align: center;
-        font-weight: 1000;
-        line-height: 30%;
-      }
-      h3 + p {
-        font-family: "Trebuchet MS", Helvetica, sans-serif;
-        font-size: 120%;
-        font-style: normal;
-        
-        text-align: left;
-        font-weight: 30;
-      }
-      pre {
-        font-size: 100%;
-        transform: translate(10px, 10px) rotate(3deg);
-        width: 140px;
-        height: 60px;
-        position: relative;
-        left: 0%;
-        bottom: 12%;
-      }
-      .link {
-        font-family: "Monospace";
-        font-style: italic;
-        font-weight: 200;
-        font-size: 100%;
-        line-height: 200%;
-        text-decoration: underline;
-        color: rgb(11, 95, 116);
-      }
-      .link:hover,
-      .link:focus {
-        font-family: "Monospace";
-        font-style: italic;
-        font-weight: 300;
-        font-size: 100%;
-        line-height: 200%;
-        color: rgb(90, 208, 237);
-        text-decoration: none;
-      }
-    
-      #details {
-        font-family: "Trebuchet MS", Helvetica, sans-serif;
-        font-size: 120%;
-        font-style: normal;
-        
-        text-align: left;
-        font-weight: 28;
-        line-height: 120%;
-        position: relative;
-        left: 1%;
-      }
-    
-      .keywords {
-        font-family: "Trebuchet MS", Helvetica, sans-serif;
-        font-size: 125%;
-        
-        
-        text-align: left;
-        font-weight: 34;
-        line-height: 120%;
-        color: rgb(100, 24, 49);
-      }
-    
-      .keywords:hover,
-      .keywords:focus {
-        font-family: "Trebuchet MS", Helvetica, sans-serif;
-        font-size: 135%;
-        
-        
-        text-align: left;
-        font-weight: 34;
-        line-height: 120%;
-        color: rgb(195, 39, 91);
-      }
-    
-    
-      #Resumelink {
-        font-family: Copperplate, "Copperplate Gothic Light", fantasy;
-        font-size: 285%;
-        font-style: italic;
-        font-variant: small-caps;
-        font-weight: 40;
-        line-height: 200%;
-        color: rgb(11, 95, 116);
-        text-decoration: underline;
-        transition: all 0.5s ease-out;
-      }
-    
-      #Resumelink:hover,
-      #Resumelink:focus {
-        font-family: Copperplate, "Copperplate Gothic Light", fantasy;
-        font-size: 300%;
-        font-style: italic;
-        font-variant: small-caps;
-        font-weight: 40;
-        line-height: 200%;
-        color: rgb(90, 208, 237);
-        text-decoration: none;
-        background-color: rgb(186, 210, 223);
-      }
-    
-    
-      h4 {
-        font-family: Copperplate, "Copperplate Gothic Light", fantasy;
-        font-size: 240%;
-        font-style: oblique;
-        font-variant: normal;
-        text-align: left;
-        font-weight: 30;
-        line-height: 100%;
-      }
-    
-      .li {
-        font-family: Copperplate, "Copperplate Gothic Light", fantasy;
-        font-size: 220%;
-        font-style: normal;
-        font-variant: normal;
-        text-align: left;
-        font-weight: 10;
-        line-height: 100%;
-        flex: 1;
-        padding: 0.5rem;
-        transition: all 0.5s ease-out;
-      }
-    
-      .li:hover,
-      .li:focus {
-        background-color: rgb(186, 210, 223);
-        color: rgb(41, 44, 97);
-      }
-    
-      .longpara {
-        max-width: 70ch;
-        font-family: "Trebuchet MS", Helvetica, sans-serif;
-        font-size: 60%;
-        font-style: normal;
-        
-        text-align: left;
-        font-weight: 26;
-        line-height: 120%;
-      }
-    
-      colgroup {
-        background-color: rgba(179, 200, 211, 0.717);
-      }
-      caption{
-        font-size: 80%;
-      }
-      tr {
-        font-family: "Trebuchet MS", Helvetica, sans-serif;
-        font-size: 60%;
-        font-style: normal;
-        
-        text-align: left;
-        font-weight: 26;
-        line-height: 120%;
-      }
-      #mypic {
-        position: relative;
-        display: inline-block;
-        left: 40%;
-        top: 15%;
-        width: 120%;
-        height: auto;
-      }
-    
-      nav {
-        position: relative;
-        left: 10%;
-        top: 2%;
-        border-radius: 10%;
-      }
-    
-      figcaption {
-        text-align: left;
-        font-family: "Trebuchet MS", Helvetica, sans-serif;
-        font-size: 100%;
-        
-        
-        font-weight: 30;
-        line-height: 200%;
-        position: relative;
-        left: 35%;
-      }
-    
-      #middle {
-        display: flex;
-        flex-direction: column;
-      }
-    
-      .highlight {
-        font-family: Copperplate, "Copperplate Gothic Light", fantasy;
-        font-size: 100%;
-        font-style: normal;
-        
-        text-align: left;
-        font-weight: 20;
-        line-height: 120%;
-        background-color: rgba(179, 200, 211, 0.717);
-      }
-    
-      .socialmedia {
-        display: inline-block;
-        flex-direction: row;
-      }
-    
-      #summary {
-        font-family: URW Chancery L, cursive;
-        font-size: 200%;
-        font-weight: 30;
-        line-height: 120%;
-        position: relative;
-        bottom: 10px;
-        left: 70px;
-      }
-      #summary + section {
-        font-family: URW Chancery L, cursive;
-        font-size: 150%;
-        font-weight: 30;
-        line-height: 120%;
-        position: relative;
-        bottom: 10px;
-        left: 70px;
-      }
-    
-      #email {
-        font-family: "Trebuchet MS", Helvetica, sans-serif;
-        font-size: 120%;
-        font-style: normal;
-        
-        text-align: left;
-        font-weight: 20;
-        line-height: 120%;
-      }
-    
-      h5 {
-        list-style: none;
-        font-family: Copperplate, "Copperplate Gothic Light", fantasy;
-        font-size: 140%;
-        font-style: normal;
-        
-        text-align: left;
-        font-weight: 30;
-        line-height: 50%;
-        position: relative;
-        left: 70px;
-      }
-    
-      #contact {
-        list-style: none;
-        font-family: "Trebuchet MS", Helvetica, sans-serif;
-        font-size: 120%;
-        font-style: normal;
-        
-        text-align: left;
-        font-weight: 20;
-        line-height: 150%;
-        position: relative;
-        bottom: 0px;
-        left: 30px;
-      }
-      details > summary {
-        list-style: none;
-      }
-      details {
-        display: flex;
-        flex-direction: row;
-      }
+#cancel {
+  background-color: #ccc;
+  color: #fff;
+  position: relative;
+  left: 33%;
+  padding: 10px;
+  margin: 10px;
+  border: none;
+  border-radius: 5px;
 }
+
+#save:hover {
+    background-color: gold;
+}
+
+#cancel:hover {
+  background-color: gold;
+}
+
+button:hover {
+    background-color: gold;
+  }
